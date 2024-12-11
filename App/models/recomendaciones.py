@@ -73,3 +73,41 @@ ORDER BY average_rating DESC;
         }
         for fila in resultados
     ]
+
+
+def get_user(usuario_id):
+    # Establecer conexión y cursor
+    db = obtener_conexion()
+    cursor = db.cursor()
+
+    # Consulta para obtener puntaje promedio por item
+    consulta = """
+    SELECT * FROM  users  WHERE  id  = %s;
+    """
+    cursor.execute(consulta, (usuario_id,))
+    resultados = cursor.fetchall()
+
+    # Cerrar cursor y conexión
+    cursor.close()
+    db.close()
+
+    return [{"id": fila[0], "name": fila[1]} for fila in resultados]
+
+
+def list_user():
+    # Establecer conexión y cursor
+    db = obtener_conexion()
+    cursor = db.cursor()
+
+    # Consulta para obtener puntaje promedio por item
+    consulta = """
+    SELECT * FROM  users;
+    """
+    cursor.execute(consulta, ())
+    resultados = cursor.fetchall()
+
+    # Cerrar cursor y conexión
+    cursor.close()
+    db.close()
+
+    return [{"id": fila[0], "name": fila[1]} for fila in resultados]

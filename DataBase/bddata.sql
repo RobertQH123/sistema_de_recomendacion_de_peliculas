@@ -209,19 +209,36 @@ SELECT
     SUM(r1.rating * r2.rating) / 
     (SQRT(SUM(POWER(r1.rating, 2))) * SQRT(SUM(POWER(r2.rating, 2)))) AS cosine_similarity
 FROM 
-    movie_raitings r1
+    movie_ratings r1
 JOIN 
-    movie_raitings r2 ON r1.ID_user = r2.ID_user
+    movie_ratings r2 ON r1.user_id = r2.user_id
 JOIN 
-    movies m1 ON r1.ID_movie = m1.id
+    movies m1 ON r1.movie_id = m1.id
 JOIN 
-    movies m2 ON r2.ID_movie = m2.id
+    movies m2 ON r2.movie_id = m2.id
 WHERE 
     m1.id != m2.id
 GROUP BY 
     m1.id, m2.id;
 
-
+CREATE VIEW user_similarity AS
+SELECT 
+    u1.id AS user_id_1,
+    u2.id AS user_id_2,
+    SUM(r1.rating * r2.rating) / 
+    (SQRT(SUM(POWER(r1.rating, 2))) * SQRT(SUM(POWER(r2.rating, 2)))) AS cosine_similarity
+FROM 
+    movie_ratings r1
+JOIN 
+    movie_ratings r2 ON r1.movie_id = r2.movie_id
+JOIN 
+    users u1 ON r1.user_id = u1.id
+JOIN 
+    users u2 ON r2.user_id = u2.id
+WHERE 
+    u1.id != u2.id
+GROUP BY 
+    u1.id, u2.id;
 
 
 CREATE VIEW user_recommendations AS

@@ -35,3 +35,21 @@ export const fetchFilmAll = async () => {
     throw new Error('Error search movies')
   }
 }
+
+export const fetchReco = async ({ id }) => {
+  try {
+    const res = await fetch(
+      `http://127.0.0.1:5000/recomendaciones/usuario/${id}`
+    )
+    const data = await res.json()
+    const mapperUser = data?.map((moive) => ({
+      id: moive.movie_id,
+      title: moive.movie_title,
+      img: moive.img,
+    }))
+
+    return mapperUser
+  } catch (error) {
+    throw new Error('Error user')
+  }
+}

@@ -1,4 +1,4 @@
-.page {
+/* .page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,4 +38,168 @@ form {
 }
 .movie img {
   border-radius: 8px;
+} */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #141414;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  padding: 20px;
+  background-color: #e50914;
+  color: #fff;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+header .form {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+header .form input {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+header .form button {
+  background-color: #e50914;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header .form button:hover {
+  background-color: #b00610;
+}
+
+main {
+  padding: 20px;
+}
+
+main p {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.movie {
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.movie h3 {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #fff;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header .form input {
+    width: 200px;
+  }
+
+  main p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Estilo principal para la lista */
+.table-user {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  scrollbar-width: none; /* Oculta la barra de desplazamiento en navegadores compatibles */
+}
+
+/* Ocultar barra de desplazamiento en navegadores webkit */
+.table-user::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilo para los elementos individuales */
+.table-user li {
+  background: #141414;
+  color: #fff;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  padding: 15px;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.table-user li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Opcional: Estilo del contenedor */
+ul.table-user {
+  background: linear-gradient(to right, #000000, #1a1a1a);
+  border-radius: 15px;
 }

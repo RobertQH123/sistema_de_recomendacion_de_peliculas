@@ -4,6 +4,8 @@ from models.recomendaciones import (
     Generar_Recomendaciones_Usuarios_Similares,
     Generar_Recomendaciones_Peliculas_Similares,
     Generar_Recomendaciones_Mejores_Peliculas,
+    get_user,
+    list_user,
 )
 
 
@@ -26,6 +28,12 @@ def recomendaciones_por_item(usuario_id):
 @app.route("/recomendaciones/mejores/", methods=["GET"])
 def recomendaciones_mejores():
     resultados = Generar_Recomendaciones_Mejores_Peliculas()
+    return jsonify(resultados)
+
+
+@app.route("/usuarios", methods=["GET"])
+def list():
+    resultados = list_user()
     return jsonify(resultados)
 
 
