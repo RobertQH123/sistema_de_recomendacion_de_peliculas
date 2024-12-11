@@ -1,0 +1,17 @@
+# Entornos virtuales
+venv/
+.env/
+*.pyc
+__pycache__/
+
+# Configuración de herramientas
+.flake8
+.mypy_cache/
+.pytest_cache/
+
+# Archivos de log
+*.log
+
+# Archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,44 @@
+# Dependencias de Node.js
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Archivos de salida de compilación
+build/
+dist/
+*.cache
+
+# Configuración de desarrollo local
+.env
+.env.local
+.env.*.local
+
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de registro y depuración
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs y editores
+.idea/
+.vscode/
+*.swp
+
+# Archivos de prueba y cobertura
+coverage/
+*.snap
+
+# Temporal de ESLint y otros linters
+.eslintcache
+.stylelintcache
+
+# Configuración de servicio y dependencias externas
+firebase-debug.log
+*.pem
+*.key
+*.crt
