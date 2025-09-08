@@ -24,7 +24,7 @@ El sistema incluye tres tipos de recomendaciones:
 ### 1️⃣ Clonar el repositorio  
 ```bash
 git clone https://github.com/RobertQH123/sistema_de_recomendacion_de_peliculas.git
-cd movie-recommendation-system
+cd sistema_de_recomendacion_de_peliculas
 ```
 ### 2️⃣ Levantar la base de datos con Docker
 ```bash
